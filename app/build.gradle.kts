@@ -40,8 +40,7 @@ android {
 }
 
 dependencies {
-
-    implementation(libs.coil.gif)
+    implementation(libs.coil.gif.v260)
     implementation(libs.coil.compose)
     implementation(libs.accompanist.pager)
     implementation(libs.accompanist.pager.indicators)
