@@ -70,7 +70,7 @@ fun Simulasi(habitId: Int){
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(18.dp),
+                .padding(horizontal = 16.dp, vertical = 50.dp),
 
             horizontalAlignment = Alignment.Start,
             verticalArrangement = Arrangement.Top,

@@ -21,19 +21,19 @@ val Typography = Typography(
     bodyLarge = TextStyle(
         fontFamily = latofontfamily ,
         fontWeight = FontWeight.Bold,
-        fontSize = 16.sp,
+        fontSize = 18.sp,
         color = black
     ),
     titleLarge = TextStyle(
         fontFamily = latofontfamily,
         fontWeight = FontWeight.ExtraBold,
-        fontSize = 20.sp,
+        fontSize = 22.sp,
         color = black
     ),
     bodySmall = TextStyle(
         fontFamily = latofontfamily,
-        fontWeight = FontWeight.Light,
-        fontSize = 12.sp,
+        fontWeight = FontWeight.Normal,
+        fontSize = 14.sp,
         color = black
     ),
 //    bodyMedium = TextStyle(
