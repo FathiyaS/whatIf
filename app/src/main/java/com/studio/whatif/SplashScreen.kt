@@ -20,13 +20,15 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import com.studio.whatif.navigation.Screen
 import com.studio.whatif.ui.theme.mint
 import com.studio.whatif.ui.theme.white
 import kotlinx.coroutines.delay
 
 @Composable
-fun SplashScreen() {
+fun SplashScreen(navController: NavController) {
     val scale = remember { Animatable(0f) }
     LaunchedEffect(key1 = true) {
         scale.animateTo(
@@ -36,17 +38,10 @@ fun SplashScreen() {
                 easing = FastOutSlowInEasing
             )
         )
-//        delay(1500)
-//        if (authViewModel.checkUserLoggedIn() != null) {
-//            navController.navigate(Screen.beranda.route) {
-//                popUpTo(Screen.splash.route) { inclusive = true }
-//            }
-//        } else {
-//            navController.navigate(Screen.welcome.route) {
-//                popUpTo(Screen.splash.route) { inclusive = true }
-//            }
-//
-//        }
+        delay(1500)
+        navController.navigate(Screen.beranda.route) {
+                popUpTo(Screen.splash.route) { inclusive = true }
+        }
     }
 
     Box(modifier = Modifier
@@ -75,8 +70,3 @@ fun SplashScreen() {
     }
 }
 
-@Preview(showBackground = true)
-@Composable
-fun SplashScreenPreview(){
-    SplashScreen()
-}

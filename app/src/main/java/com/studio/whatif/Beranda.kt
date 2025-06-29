@@ -42,7 +42,7 @@ import com.studio.whatif.ui.theme.white
 import java.net.URLEncoder
 
 @Composable
-fun Beranda() {
+fun Beranda(navController: NavController) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -100,7 +100,9 @@ fun Beranda() {
                 verticalArrangement = Arrangement.spacedBy(16.dp)
             ) {
                 items(habits.goodhabits) { habit ->
-                    HabitCard(habit)
+                    HabitCard(habit = habit, onClick ={
+                        navController.navigate("simulasi/${habit.id}")
+                    })
                 }
             }
 
@@ -111,8 +113,9 @@ fun Beranda() {
 }
 
 @Composable
-fun HabitCard(habit: habits.Habit) {
+fun HabitCard(habit: habits.Habit, onClick: () -> Unit) {
     Card(
+        onClick = onClick,
         colors = CardDefaults.cardColors(white),
         border = BorderStroke(1.dp, green),
         elevation = CardDefaults.cardElevation(8.dp),
@@ -153,8 +156,3 @@ fun HabitCard(habit: habits.Habit) {
 }
 
 
-@Preview(showBackground = true)
-@Composable
-fun BerandaPreview(){
-    Beranda()
-}
