@@ -1,5 +1,7 @@
 package com.studio.whatif
 
+import android.os.Build
+import androidx.annotation.RequiresApi
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -14,6 +16,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
@@ -22,8 +25,10 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -31,6 +36,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil.ImageLoader
 import coil.compose.AsyncImage
+import coil.decode.ImageDecoderDecoder
 import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.HorizontalPager
 import com.google.accompanist.pager.rememberPagerState
@@ -41,10 +47,20 @@ import com.studio.whatif.ui.theme.green
 import com.studio.whatif.ui.theme.mint
 import com.studio.whatif.ui.theme.white
 
+@RequiresApi(Build.VERSION_CODES.P)
 @OptIn(ExperimentalPagerApi::class)
 @Composable
 fun Simulasi(habitId: Int){
+    val context = LocalContext.current
+
     val habit = habits.goodhabits.firstOrNull { it.id == habitId }
+    val gifEnabledLoader = ImageLoader.Builder(context)
+
+        .components {
+            add(ImageDecoderDecoder.Factory())
+        }
+        .build()
+
 
     if (habit == null) {
         Text("Habit tidak ditemukan.")
@@ -154,12 +170,14 @@ fun Simulasi(habitId: Int){
                         if (!simulation.gifUrl.isNullOrEmpty() && simulation.gifUrl != "null") {
                             AsyncImage(
                                 model = simulation.gifUrl,
+                                imageLoader = gifEnabledLoader,
                                 contentDescription = null,
                                 modifier = Modifier
                                     .fillMaxWidth()
+                                    .clip(RoundedCornerShape(15.dp))
                                     .height(400.dp)
                                     .padding(vertical = 50.dp),
-                                contentScale = ContentScale.Crop
+                                contentScale = ContentScale.Crop,
                             )
                         } else {
                             Image(

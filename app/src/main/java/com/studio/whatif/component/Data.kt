@@ -11,12 +11,12 @@ object habits{
         val simulations: List<Simulation> = emptyList()
     )
         data class Simulation(
-        val dayLabel: String,     // misalnya "Day 1", "1 minggu", dll
+        val dayLabel: String,
         val description: String,
         val highlight : String,
         val highlightDescription : String,
-        val illustration: Int? = null,   // kalau ada gambar lokal
-        val gifUrl: String? = null     // kalau mau ambil GIF dari internet
+        val illustration: Int? = null,
+        val gifUrl: String? = null
     )
 
     val goodhabits = mutableListOf(
@@ -26,9 +26,9 @@ object habits{
             description = "Apa jadinya kalau kamu mulai tidur jam 9 malam tiap hari?",
             image = R.drawable.sleepearlier,
             simulations = listOf(
-                Simulation("Day 1", "Sehari setelahnya", "Energi Lebih Terjaga", "Tidur lebih cepat bikin badanmu terasa segar dan pikiran lebih jernih keesokan harinya.", R.drawable.sleepearlier, "null"),
-                Simulation("Day 7", "Seminggu setelahnya", "Konsentrasi Meningkat", "Rutinitas tidur teratur mulai memperbaiki fokus dan membuatmu lebih produktif.", R.drawable.sleepearlier, "null"),
-                Simulation("Day 30", "Sebulan setelahnya", "Mood Stabil", "Kamu jadi lebih jarang uring-uringan karena tidur cukup bantu menyeimbangkan hormon.", R.drawable.sleepearlier, "null"),
+                Simulation("Day 1", "Sehari setelahnya", "Energi Lebih Terjaga", "Tidur lebih cepat bikin badanmu terasa segar dan pikiran lebih jernih keesokan harinya.", R.drawable.sleepearlier, "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExM2V2ZDBuNjgwMTZ4MmM5d2FibWI4MDdwaWdrbjZpZzhqenU1d2VlNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/LwDouQz95yMqVm9iHA/giphy.gif"),
+                Simulation("Day 7", "Seminggu setelahnya", "Konsentrasi Meningkat", "Rutinitas tidur teratur mulai memperbaiki fokus dan membuatmu lebih produktif.", R.drawable.sleepearlier, "https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3OHVqdHl3cWcwNnRwODF3NnpsbnJvbm95YWZoaDRqaWQ5OWExa3ZrNCZlcD12MV9naWZzX3JlbGF0ZWQmY3Q9Zw/1hMaFTOrK2MhgH6uhY/giphy.gif"),
+                Simulation("Day 30", "Sebulan setelahnya", "Mood Stabil", "Kamu jadi lebih jarang uring-uringan karena tidur cukup bantu menyeimbangkan hormon.", R.drawable.sleepearlier, "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcWViNjF2dDd5ZW5xeTRndG5sbWExY202OXpleHR5eXdjcDR3NzlmaCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/vwEHGjx71HSytx5mY8/giphy.gif"),
                 Simulation("Day 90", "Tiga bulan setelahnya", "Daya Tahan Tubuh Membaik", "Imunitas tubuh meningkat karena sel-sel lebih optimal memperbaiki diri saat tidur.", R.drawable.sleepearlier, "null"),
                 Simulation("Day 180", "Enam bulan setelahnya", "Kebiasaan Positif Terbentuk", "Tidur cepat sudah jadi kebiasaanmu tanpa perlu dipaksa lagi.", R.drawable.sleepearlier, "null"),
                 Simulation("Day 365", "Setahun setelahnya", "Jantung Lebih Sehat", "Risiko penyakit jantung menurun karena pola tidurmu stabil.", R.drawable.sleepearlier, "null"),
@@ -186,7 +186,7 @@ object habits{
             description = "Supaya kamu nggak gampang dimanfaatkan orang",
             image = R.drawable.sayno,
             simulations = listOf(
-                Simulation("Day 1", "Sehari setelahnya", "Nggak Terbebani", "Kamu lega setelah berani menolak hal yang nggak kamu mau.", R.drawable.sleepearlier, "null"),
+                Simulation("Day 1", "Sehari setelahnya", "Nggak Terbebani", "Kamu lega setelah berani menolak hal yang nggak kamu mau.", R.drawable.sleepearlier, "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExbHZ4OG4xdHk0eWw3cXljeGN6MGlkcXUwaXJtNXNyc2pjNWg1MzU5aiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/1gT0bx0JprXz9oNLsI/giphy.gif"),
                 Simulation("Day 7", "Seminggu setelahnya", "Lebih Percaya Diri", "Kamu mulai nyaman bilang nggak tanpa rasa bersalah.", R.drawable.sleepearlier, "null"),
                 Simulation("Day 30", "Sebulan setelahnya", "Punya Batasan Sehat", "Orang lain makin menghargaimu.", R.drawable.sleepearlier, "null"),
                 Simulation("Day 90", "Tiga bulan setelahnya", "Lebih Bahagia", "Nggak merasa hidupmu diatur orang lain.", R.drawable.sleepearlier, "null"),

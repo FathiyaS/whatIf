@@ -5,6 +5,7 @@ accompanistSystemuicontrollerVersion = "<0.33.2-alpha>"
 agp = "8.7.3"
 coilCompose = "2.5.0"
 coilGif = "2.6.0"
+compose = "1.0.0-beta01"
 kotlin = "2.0.0"
 coreKtx = "1.16.0"
 junit = "4.13.2"
@@ -27,6 +28,7 @@ androidx-navigation-compose = { module = "androidx.navigation:navigation-compose
 coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coilCompose" }
 coil-gif = { module = "io.coil-kt:coil-gif", version.ref = "coilCompose" }
 coil-gif-v260 = { module = "io.coil-kt:coil-gif", version.ref = "coilGif" }
+compose = { module = "com.github.bumptech.glide:compose", version.ref = "compose" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
